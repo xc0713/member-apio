@@ -12,6 +12,7 @@ gulp.task('servers', function() {
                 if (req.url === '/favicon.ico') {
                     return res.end();
                 }
+                var pathname = url.parse(req.url).pathname;
                 if (req.url === '/') {
                     res.end(fs.readFileSync(path.join(__dirname, 'src', 'index.html')))
                 }
